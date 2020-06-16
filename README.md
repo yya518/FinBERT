@@ -12,8 +12,8 @@ With the release of `FinBERT`, we hope practitioners and researchers can utilize
 ## Download FinBERT
 
 We provide four versions of pre-trained weights. 
-- FinBERT-FinVocab-Uncased (**Recommended**)
-- FinBERT-FinVocab-Cased
+- [FinBERT-FinVocab-Uncased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EksJcamJpclJlbMweFfB5DQB1XrsxURYN5GSqZw3jmSeSw?e=KAyhsX) (**Recommended**)
+- [FinBERT-FinVocab-Cased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EgJZkmPlrdBLj6Kb4RXxwGwBymku6G-47QQrPYYDPJfr1Q?e=xA978z)
 - FinBERT-BaseVocab-Uncased
 - FinBERT-BaseVocab-Cased
 
