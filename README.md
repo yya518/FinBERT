@@ -2,7 +2,7 @@
 
 `FinBERT` is a BERT model trained on financial communication text. The purpose is to enhance finaincal NLP research and practice. It is trained on the following three finanical communication corpus. The total corpora size is 4.9B tokens.
 
-* Corporate Reports 10-K & 10-Q: 2.5B tokens (For 10-K, we use Item 1, Item IA and Item 7; For 10-Q, we use Item 1A and Item 2)
+* Corporate Reports 10-K & 10-Q: 2.5B tokens 
 * Earnings Call Transcripts: 1.3B tokens
 * Analyst Reports: 1.1B tokens
 
@@ -27,6 +27,14 @@ Finanical sentiment classification is a core NLP task in finance. FinBERT is sho
 
 As a demostration, We provide a script for fine-tuning FinBERT for Finanical Phrase Bank dataset.
 
+## Citation
+    @misc{yang2020finbert,
+        title={FinBERT: A Pretrained Language Model for Financial Communications},
+        author={Yi Yang and Mark Christopher Siy UY and Allen Huang},
+        year={2020},
+        eprint={2006.08097},
+        archivePrefix={arXiv},
+        }
 
 ## Contact
 Please post a Github issue or contact [imyiyang@ust.hk](imyiyang@ust.hk) if you have any questions.
