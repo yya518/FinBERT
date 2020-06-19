@@ -39,6 +39,11 @@ There are 4 kinds of vocab to choose from: finance-cased, finance-uncased, base-
 ### Downloading Financial Phrase Bank Dataset
 
 
+### Environment:
+To set up the evironment used to train and test the model, run `pip install -r requirements.txt`
+We would like to give special thanks to creators of pytorch_trained_bert (i.e. pytorch-transformers)
+
+
 ## Citation
     @misc{yang2020finbert,
         title={FinBERT: A Pretrained Language Model for Financial Communications},
