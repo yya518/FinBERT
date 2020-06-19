@@ -1,6 +1,7 @@
 import os
 import copy
 import numpy as np
+import time
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -11,10 +12,10 @@ from bertModel import BertClassification, dense_opt
 from datasets import text_dataset, financialPhraseBankDataset
 import argparse
 from sklearn.metrics import f1_score
-    
+
 def train_model(model, model_type, path, criterion, optimizer, scheduler, device, num_epochs=100, early_stopping = 7):
     model.to(device)
-    log_file =  os.path.join(path, "_log.txt")
+    log_file =  os.path.join(path, "{}_log.txt".format(model_type))
     model_path = os.path.join(path, "{}.pth".format(model_type))
     wo= open(log_file, 'w')
     
@@ -24,7 +25,7 @@ def train_model(model, model_type, path, criterion, optimizer, scheduler, device
     best_loss = 100
     best_accuracy = 0 
     best_f1 = 0
-    early_stopping_count = 10
+    early_stopping_count = 0
     
     for epoch in range(num_epochs):
         if (early_stopping_count >= early_stopping):
@@ -140,13 +141,12 @@ if __name__ == '__main__':
                             "base-uncased": "FinBert_BaseVocab_Uncased",
                             "finance-cased": "FinBert_FinVocab_Cased",
                             "finance-uncased": "FinBert_FinVocab_Uncased"}
-    model_type = vocab_to_model_dict[args.vocab]; 
+    
+    model_type = vocab_to_model_dict[args.vocab]
 
     list_of_train_splits = financialPhraseBankDataset(args.data_dir)
     
-    performance_results = []
-
-    X_train, X_test, y_train, y_test =  list_of_train_splits[i]
+    X_train, X_test, y_train, y_test =  list_of_train_splits
     
     train_lists = [X_train, y_train]
     test_lists = [X_test, y_test]
@@ -161,7 +161,7 @@ if __name__ == '__main__':
 
     device = torch.device(args.cuda_device if torch.cuda.is_available() else "cpu")
 
-    model = BertClassification(weight_path=args.weight_path, num_labels, vocab=args.vocab)
+    model = BertClassification(weight_path=args.weight_path, num_labels=num_labels, vocab=args.vocab)
     Dense_opt = dense_opt(model)
     optim = Dense_opt.get_optim()
 
