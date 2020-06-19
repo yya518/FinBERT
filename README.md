@@ -14,8 +14,8 @@ With the release of `FinBERT`, we hope practitioners and researchers can utilize
 We provide four versions of pre-trained weights. 
 - [FinBERT-FinVocab-Uncased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EksJcamJpclJlbMweFfB5DQB1XrsxURYN5GSqZw3jmSeSw?e=KAyhsX) (**Recommended**)
 - [FinBERT-FinVocab-Cased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EgJZkmPlrdBLj6Kb4RXxwGwBymku6G-47QQrPYYDPJfr1Q?e=xA978z)
-- FinBERT-BaseVocab-Uncased
-- FinBERT-BaseVocab-Cased
+- [FinBERT-BaseVocab-Uncased] (https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/ErcYR77ZaxBAnQsmjIJF5joBapAf0HDaH0vWr_WXnoF1sA?e=oBTsSk)
+- [FinBERT-BaseVocab-Cased] (https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EtBK8m0MBC1Np5sAN-s5ZHsBW2dGCfBvoZtXyD_Xa9ywGw?e=h3veaz)
 
 `FinVocab` is a new WordPiece vocabulary on our finanical corpora using the SentencePiece library. We produce both cased and uncased versions of `FinVocab`, with sizes of 28,573 and 30,873 tokens respectively. This is very similar to the 28,996 and 30,522 token sizes of the original BERT cased and uncased `BaseVocab`. 
 - [FinVocab-Uncased](https://gohkust-my.sharepoint.com/:t:/g/personal/imyiyang_ust_hk/EchaAUzzYKhAidVhkqGp790BuA8UC5E9rTRhTmAnlGzZug?e=eniqml)
