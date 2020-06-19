@@ -7,7 +7,7 @@
 * Analyst Reports: 1.1B tokens
 
 `FinBERT` results in state-of-the-art performance on financial sentiment classification task, which is a core financial NLP task. 
-With the release of `FinBERT`, we hope practitioners and researchers can utilize FinBERT for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
+With the release of `FinBERT`, we hope practitioners and researchers can utilize `FinBERT` for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
 
 ## Download FinBERT
 
@@ -23,9 +23,9 @@ We provide four versions of pre-trained weights.
 
 ## Using FinBERT for financial sentiment classification
 
-Finanical sentiment classification is a core NLP task in finance. FinBERT is shown to outperform vanilla BERT model on several financial sentiment classification task. Since FinBERT is in the same format as BERT, please refer to Google's BERT repo for downstream tasks. 
+Finanical sentiment classification is a core NLP task in finance. `FinBERT` is shown to outperform vanilla `BERT` model on several financial sentiment classification task. Since `FinBERT` is in the same format as BERT, please refer to Google's `BERT` repo for downstream tasks. 
 
-As a demostration, We provide a script for fine-tuning FinBERT for Finanical Phrase Bank dataset, a financial sentiment classification dataset. 
+As a demostration, We provide a script for fine-tuning `FinBERT` for Finanical Phrase Bank dataset, a financial sentiment classification dataset. 
 
 #### Downloading Financial Phrase Bank Dataset
 The datase is collected by [Malo et al. 2014](https://arxiv.org/abs/1307.5336), and can be downloaded from [this link](https://www.researchgate.net/profile/Pekka_Malo/publication/251231364_FinancialPhraseBank-v10/data/0c96051eee4fb1d56e000000/FinancialPhraseBank-v10.zip?origin=publication_list). The zip file for the Financial Phrase Bank Dataset has been provided for ease of download and use. 
