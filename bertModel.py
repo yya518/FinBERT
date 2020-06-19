@@ -9,7 +9,6 @@ class BertClassification(nn.Module):
     def __init__(self, weight_path, num_labels=2, vocab="base-cased"):
         super(BertDense, self).__init__()
         self.num_labels = num_labels
-        self.model = model
         self.vocab = vocab 
         if self.vocab == "base-cased":
             self.bert = BertModel.from_pretrained(weight_path)

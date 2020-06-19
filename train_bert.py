@@ -12,7 +12,7 @@ from datasets import text_dataset, financialPhraseBankDataset
 import argparse
 from sklearn.metrics import f1_score
     
-def train_model(model, path, criterion, optimizer, scheduler, device, num_epochs=100, early_stopping = 7):
+def train_model(model, model_type, path, criterion, optimizer, scheduler, device, num_epochs=100, early_stopping = 7):
     model.to(device)
     log_file =  os.path.join(path, "_log.txt")
     model_path = os.path.join(path, "{}.pth".format(model_type))
@@ -128,7 +128,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--cuda_device', type=str, default="cuda:0")
-    parser.add_argument('--bert_model', type=str, default="original") 
     parser.add_argument('--vocab', type= str, default = "base-cased")
     parser.add_argument('--output_path', type=str)
     parser.add_argument('--vocab_path', type=str)
@@ -137,6 +136,11 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     num_labels = 3
+    vocab_to_model_dict = { "base-cased": "FinBert_BaseVocab_Cased", 
+                            "base-uncased": "FinBert_BaseVocab_Uncased",
+                            "finance-cased": "FinBert_FinVocab_Cased",
+                            "finance-uncased": "FinBert_FinVocab_Uncased"}
+    model_type = vocab_to_model_dict[args.vocab]; 
 
     list_of_train_splits = financialPhraseBankDataset(args.data_dir)
     
@@ -164,4 +168,4 @@ if __name__ == '__main__':
     criterion = nn.CrossEntropyLoss()
     
     exp_lr_scheduler = lr_scheduler.StepLR(optim, step_size=5, gamma=0.1)
-    train_model(i, args.model_type, model, args.output_path, criterion, optim, exp_lr_scheduler, device)
+    train_model(model, model_type, args.output_path, criterion, optim, exp_lr_scheduler, device)
