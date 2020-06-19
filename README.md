@@ -33,6 +33,7 @@ The datase is collected by [Malo et al. 2014](https://arxiv.org/abs/1307.5336), 
 #### Environment:
 To set up the evironment used to train and test the model, run `pip install -r requirements.txt`\
 We would like to give special thanks to the creators of pytorch-pretrained-bert (i.e. pytorch-transformers)
+
 In order to fine-tune `FinBERT` on the Financial Phrase Bank dataset, please run the script as follows:
 
 `python train_bert.py --cuda_device (cuda:device_id) --output_path (output directory) --vocab (vocab chosen)`\
