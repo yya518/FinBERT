@@ -29,7 +29,7 @@ As a demostration, We provide a script for fine-tuning FinBERT for Finanical Phr
 
 In order to train FinBert on the Financial Phrase Bank dataset, please run the script as follows:
 
-python train_bert.py --cuda_device (cuda:device_id) --output_path (output directory) --vocab (vocab chosen) --vocab_path (path to new vocab txt file) --data_dir (path to downloaded dataset) --weight_path (path to downloaded weights)
+`python train_bert.py --cuda_device (cuda:device_id) --output_path (output directory) --vocab (vocab chosen) --vocab_path (path to new vocab txt file) --data_dir (path to downloaded dataset) --weight_path (path to downloaded weights)`
 
 *Note to run the script, one should first download the model weights, and the Financial Phrase Bank Dataset. 
 
