@@ -30,8 +30,7 @@ As a demostration, We provide a script for fine-tuning FinBERT for Finanical Phr
 In order to train FinBert on the Financial Phrase Bank dataset, please run the script as follows:
 
 `python train_bert.py --cuda_device (cuda:device_id) --output_path (output directory) --vocab (vocab chosen)`
- `--vocab_path (path to new vocab txt file) --data_dir (path to downloaded dataset)`
- `--weight_path (path to downloaded weights)`
+ `--vocab_path (path to new vocab txt file) --data_dir (path to downloaded dataset) --weight_path (path to downloaded weights)`
  
 There are 4 kinds of vocab to choose from: finance-cased, finance-uncased, base-cased, and base-uncased. 
 
