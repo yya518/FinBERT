@@ -36,10 +36,10 @@ There are 4 kinds of vocab to choose from: finance-cased, finance-uncased, base-
 
 *Note to run the script, one should first download the model weights, and the Financial Phrase Bank Dataset. 
 
-### Downloading Financial Phrase Bank Dataset
-The zip file for the Financial Phrase Bank Dataset has been provided for ease of download and use. 
+#### Downloading Financial Phrase Bank Dataset
+The datase is collected by [Malo et al. 2014](https://arxiv.org/abs/1307.5336), and can be downloaded from [this link](https://www.researchgate.net/profile/Pekka_Malo/publication/251231364_FinancialPhraseBank-v10/data/0c96051eee4fb1d56e000000/FinancialPhraseBank-v10.zip?origin=publication_list). The zip file for the Financial Phrase Bank Dataset has been provided for ease of download and use. 
 
-### Environment:
+#### Environment:
 To set up the evironment used to train and test the model, run `pip install -r requirements.txt`\
 We would like to give special thanks to the creators of pytorch-pretrained-bert (i.e. pytorch-transformers)
 
