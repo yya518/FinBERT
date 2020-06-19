@@ -5,20 +5,21 @@ from sklearn.model_selection import train_test_split
 import torch
 from torch.utils.data import Dataset, DataLoader
 from pytorch_pretrained_bert import BertTokenizer, BertModel, BertForMaskedLM
+import pandas as pd
 
 class text_dataset(Dataset):
-    def __init__(self, x_y_list, args, max_seq_length=256, vocab = 'base-cased', transform=None):
+    def __init__(self, x_y_list, vocab_path, max_seq_length=256, vocab = 'base-cased', transform=None):
         self.max_seq_length = max_seq_length
         self.x_y_list = x_y_list
         self.vocab = vocab
         if self.vocab == 'base-cased':
             self.tokenizer = BertTokenizer.from_pretrained('bert-base-cased', do_lower_case=False, do_basic_tokenize=True)
         elif self.vocab == 'finance-cased':
-            self.tokenizer = BertTokenizer(vocab_file = args.vocab_path, do_lower_case = False, do_basic_tokenize = True)
+            self.tokenizer = BertTokenizer(vocab_file = vocab_path, do_lower_case = False, do_basic_tokenize = True)
         elif self.vocab == 'base-uncased':
             self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=True, do_basic_tokenize=True) 
         elif self.vocab == 'finance-uncased':
-            self.tokenizer = BertTokenizer(vocab_file = args.vocab_path, do_lower_case = True, do_basic_tokenize = True)
+            self.tokenizer = BertTokenizer(vocab_file = vocab_path, do_lower_case = True, do_basic_tokenize = True)
     
     def __getitem__(self,index):
         tokenized_review = self.tokenizer.tokenize(self.x_y_list[0][index])
@@ -66,7 +67,7 @@ def financialPhraseBankDataset(dir_):
     fb_path = os.path.join(dir_, 'FinancialPhraseBank-v1.0')
     data_50 = os.path.join(fb_path, 'Sentences_50Agree.txt')
     sent_50 = []
-    rand_idx = 45 
+    rand_idx = 45
     
     with open(data_50, 'rb') as fi:
         for l in fi:
