@@ -41,7 +41,7 @@ The zip file for the Financial Phrase Bank Dataset has been provided for ease of
 
 ### Environment:
 To set up the evironment used to train and test the model, run `pip install -r requirements.txt`\
-We would like to give special thanks to creators of pytorch_pretrained_bert (i.e. pytorch-transformers)
+We would like to give special thanks to the creators of pytorch-pretrained-bert (i.e. pytorch-transformers)
 
 
 ## Citation
