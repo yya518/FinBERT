@@ -25,16 +25,7 @@ We provide four versions of pre-trained weights.
 
 Finanical sentiment classification is a core NLP task in finance. FinBERT is shown to outperform vanilla BERT model on several financial sentiment classification task. Since FinBERT is in the same format as BERT, please refer to Google's BERT repo for downstream tasks. 
 
-As a demostration, We provide a script for fine-tuning FinBERT for Finanical Phrase Bank dataset.
-
-In order to train FinBert on the Financial Phrase Bank dataset, please run the script as follows:
-
-`python train_bert.py --cuda_device (cuda:device_id) --output_path (output directory) --vocab (vocab chosen)`\
- `--vocab_path (path to new vocab txt file) --data_dir (path to downloaded dataset) --weight_path (path to downloaded weights)`
- 
-There are 4 kinds of vocab to choose from: finance-cased, finance-uncased, base-cased, and base-uncased. 
-
-*Note to run the script, one should first download the model weights, and the Financial Phrase Bank Dataset. 
+As a demostration, We provide a script for fine-tuning FinBERT for Finanical Phrase Bank dataset, a financial sentiment classification dataset. 
 
 #### Downloading Financial Phrase Bank Dataset
 The datase is collected by [Malo et al. 2014](https://arxiv.org/abs/1307.5336), and can be downloaded from [this link](https://www.researchgate.net/profile/Pekka_Malo/publication/251231364_FinancialPhraseBank-v10/data/0c96051eee4fb1d56e000000/FinancialPhraseBank-v10.zip?origin=publication_list). The zip file for the Financial Phrase Bank Dataset has been provided for ease of download and use. 
@@ -42,6 +33,14 @@ The datase is collected by [Malo et al. 2014](https://arxiv.org/abs/1307.5336), 
 #### Environment:
 To set up the evironment used to train and test the model, run `pip install -r requirements.txt`\
 We would like to give special thanks to the creators of pytorch-pretrained-bert (i.e. pytorch-transformers)
+In order to fine-tune `FinBERT` on the Financial Phrase Bank dataset, please run the script as follows:
+
+`python train_bert.py --cuda_device (cuda:device_id) --output_path (output directory) --vocab (vocab chosen)`\
+ `--vocab_path (path to new vocab txt file) --data_dir (path to downloaded dataset) --weight_path (path to downloaded weights)`
+ 
+There are 4 kinds of vocab to choose from: `FinVocab-Uncased`, `FinVocab-Cased`, and Google's BERT Base-Uncased and Base-Cased. 
+
+*Note to run the script, one should first download the model weights, and the Financial Phrase Bank Dataset.*
 
 
 ## Citation
