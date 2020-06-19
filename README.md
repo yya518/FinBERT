@@ -37,7 +37,7 @@ There are 4 kinds of vocab to choose from: finance-cased, finance-uncased, base-
 *Note to run the script, one should first download the model weights, and the Financial Phrase Bank Dataset. 
 
 ### Downloading Financial Phrase Bank Dataset
-
+The zip file for the Financial Phrase Bank Dataset has been provided for ease of download and use. 
 
 ### Environment:
 To set up the evironment used to train and test the model, run `pip install -r requirements.txt`\
