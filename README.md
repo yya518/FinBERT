@@ -26,7 +26,7 @@ We provide four versions of pre-trained weights.
 Finanical sentiment classification is a core NLP task in finance. `FinBERT` is shown to outperform vanilla `BERT` model on several financial sentiment classification task. Since `FinBERT` is in the same format as BERT, please refer to Google's `BERT` repo for downstream tasks. 
 
 As a demostration, We provide a script for fine-tuning `FinBERT` for Finanical Phrase Bank dataset, a financial sentiment classification dataset.
-We also provide a [jupyter notebook] (https://github.com/yya518/FinBERT/blob/master/FinBert%20Model%20Example.ipynb) to show how to load a fine tuned model, and then use it to predict on novel sentences. In the jupyter notebook, one can see 2 models, FinBert-FinVocab-Uncased and a Naive Bayes Model. Both Model were FineTuned on the 10K HKUST dataset, as mentioned in the paper. 
+We also provide a [jupyter notebook](https://github.com/yya518/FinBERT/blob/master/FinBert%20Model%20Example.ipynb) to show how to load a fine tuned model, and then use it to predict on novel sentences. In the jupyter notebook, one can see 2 models, FinBert-FinVocab-Uncased and a Naive Bayes Model. Both Model were FineTuned on the 10K HKUST dataset, as mentioned in the paper. 
 
 
 #### Downloading Financial Phrase Bank Dataset
