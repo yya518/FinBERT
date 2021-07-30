@@ -2,7 +2,7 @@
 
 **UPDATE:**
 
-[July 30, 2021] The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with the `transformers` library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analylst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
+[July 30, 2021] The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with Huggingface's [`transformers`](https://huggingface.co/transformers/) library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analylst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
 
 ```javascript
 from transformers import BertTokenizer, BertForSequenceClassification
