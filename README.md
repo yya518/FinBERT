@@ -1,5 +1,40 @@
 # FinBERT
 
+**UPDATE:**
+
+[July 30, 2021] The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with the `transformers` library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analylst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
+
+```javascript
+from transformers import BertTokenizer, BertForSequenceClassification
+import numpy as np
+
+finbert = BertForSequenceClassification.from_pretrained('yiyanghkust/finbert-tone',num_labels=3)
+tokenizer = BertTokenizer.from_pretrained('yiyanghkust/finbert-tone')
+
+sentences = ["there is a shortage of capital, and we need extra financing", 
+             "growth is strong and we have plenty of liquidity", 
+             "there are doubts about our finances", 
+             "profits are flat"]
+
+inputs = tokenizer(sentences, return_tensors="pt", padding=True)
+outputs = finbert(**inputs)[0]
+
+labels = {0:'neutral', 1:'positive',2:'negative'}
+for idx, sent in enumerate(sentences):
+    print(sent, '----', labels[np.argmax(outputs.detach().numpy()[idx])])
+    
+'''
+there is a shortage of capital, and we need extra financing ---- negative
+growth is strong and we have plenty of liquidity ---- positive
+there are doubts about our finances ---- negative
+profits are flat ---- neutral
+'''
+    
+```
+
+***
+
+
 `FinBERT` is a BERT model pre-trained on financial communication text. The purpose is to enhance finaincal NLP research and practice. It is trained on the following three finanical communication corpus. The total corpora size is 4.9B tokens.
 
 * Corporate Reports 10-K & 10-Q: 2.5B tokens 
