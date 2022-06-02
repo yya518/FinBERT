@@ -1,8 +1,10 @@
 # FinBERT
 
-**UPDATE**: Visit [FinBERT.AI](https://finbert.ai/) for more details on the recent development of FinBERT.
+**\*\*\*\*\* June 2, 2022: More fine-tuned FinBERT models available\*\*\*\*\***
 
-[June 2, 2022] We have fine-tuned FinBERT pretrained model on several financial NLP tasks, all outperforming traditional machine learning models, deep learning models, and fine-tuned BERT models. All the fine-tuned FinBERT models are publicly hosted at Huggingface 🤗. Specifically, we have the following:
+Visit [FinBERT.AI](https://finbert.ai/) for more details on the recent development of FinBERT.
+
+We have fine-tuned FinBERT pretrained model on several financial NLP tasks, all outperforming traditional machine learning models, deep learning models, and fine-tuned BERT models. All the fine-tuned FinBERT models are publicly hosted at Huggingface 🤗. Specifically, we have the following:
 
 - **FinBERT-Pretrained**: The pretrained FinBERT model on large-scale financial text. [link](https://huggingface.co/yiyanghkust/finbert-pretrain)
 - **FinBERT-Sentiment**: for sentiment classification task. [link](https://huggingface.co/yiyanghkust/finbert-tone)
@@ -13,7 +15,10 @@ In this Github repo,
 - [FinBERT-demo.ipynb](https://github.com/yya518/FinBERT/blob/master/FinBERT-demo.ipynb) demonstrates how to apply fine-tuned FinBERT model on specific NLP tasks. 
 - [finetune.ipynb](https://github.com/yya518/FinBERT/blob/master/finetune.ipynb) illustrates the process of fine-tuning FinBERT.
 
-**Background**: `FinBERT` is a BERT model pre-trained on financial communication text. The purpose is to enhance finaincal NLP research and practice. It is trained on the following three finanical communication corpus. The total corpora size is 4.9B tokens.
+
+**Background**: 
+
+`FinBERT` is a BERT model pre-trained on financial communication text. The purpose is to enhance finaincal NLP research and practice. It is trained on the following three finanical communication corpus. The total corpora size is 4.9B tokens.
 
 * Corporate Reports 10-K & 10-Q: 2.5B tokens 
 * Earnings Call Transcripts: 1.3B tokens
@@ -21,8 +26,8 @@ In this Github repo,
 
 `FinBERT` results in state-of-the-art performance on various financial NLP task, including sentiment analysis, ESG classification, forward-looking statement (FLS) classification. With the release of `FinBERT`, we hope practitioners and researchers can utilize `FinBERT` for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
 
-
-**UPDATE:**
+---
+**\*\*\*\*\* July 30, 2021: migrated to Huggingface 🤗\*\*\*\*\***
 
 [July 30, 2021] The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with Huggingface's [`transformers`](https://huggingface.co/transformers/) library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analyst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
 
