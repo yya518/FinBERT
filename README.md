@@ -1,18 +1,26 @@
 # FinBERT
 
-**UPDATE:**
-[June 2, 2022] We have fine-tuned FinBERT pretrained model on several financial NLP tasks, all outperforming traditional machine learning models, deep learning models, and fine-tuned BERT models.
+**UPDATE**: Visit [FinBERT.AI](https://finbert.ai/) for more details on the recent development of FinBERT.
 
-All the fine-tuned FinBERT models are publicly hosted at Huggingface 🤗. Specifically, we have the following:
+[June 2, 2022] We have fine-tuned FinBERT pretrained model on several financial NLP tasks, all outperforming traditional machine learning models, deep learning models, and fine-tuned BERT models. All the fine-tuned FinBERT models are publicly hosted at Huggingface 🤗. Specifically, we have the following:
 
-**FinBERT-Pretrained**: The pretrained FinBERT model on large-scale financial text. https://huggingface.co/yiyanghkust/finbert-pretrain
-**FinBERT-Sentiment**: for sentiment classification task. https://huggingface.co/yiyanghkust/finbert-tone
-**FinBERT-ESG**: for ESG classification task. https://huggingface.co/yiyanghkust/finbert-esg
-**FinBERT-FLS**: for forward-looking statement (FLS) classification task. https://huggingface.co/yiyanghkust/finbert-fls
+- **FinBERT-Pretrained**: The pretrained FinBERT model on large-scale financial text. [link](https://huggingface.co/yiyanghkust/finbert-pretrain)
+- **FinBERT-Sentiment**: for sentiment classification task. [link](https://huggingface.co/yiyanghkust/finbert-tone)
+- **FinBERT-ESG**: for ESG classification task. [link](https://huggingface.co/yiyanghkust/finbert-esg)
+- **FinBERT-FLS**: for forward-looking statement (FLS) classification task. [link](https://huggingface.co/yiyanghkust/finbert-fls)
 
-We have also re-organized this Github repo. 
+In this Github repo, 
+- [FinBERT-demo.ipynb](https://github.com/yya518/FinBERT/blob/master/FinBERT-demo.ipynb) demonstrates how to apply fine-tuned FinBERT model on specific NLP tasks. 
+- [finetune.ipynb](https://github.com/yya518/FinBERT/blob/master/finetune.ipynb) illustrates the process of fine-tuning FinBERT.
 
-Visit [FinBERT.AI](https://finbert.ai/) for more details on the recent development of FinBERT 
+**Background**: `FinBERT` is a BERT model pre-trained on financial communication text. The purpose is to enhance finaincal NLP research and practice. It is trained on the following three finanical communication corpus. The total corpora size is 4.9B tokens.
+
+* Corporate Reports 10-K & 10-Q: 2.5B tokens 
+* Earnings Call Transcripts: 1.3B tokens
+* Analyst Reports: 1.1B tokens
+
+`FinBERT` results in state-of-the-art performance on various financial NLP task, including sentiment analysis, ESG classification, forward-looking statement (FLS) classification. With the release of `FinBERT`, we hope practitioners and researchers can utilize `FinBERT` for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
+
 
 **UPDATE:**
 
@@ -49,20 +57,9 @@ profits are flat ---- neutral
 ***
 
 
-`FinBERT` is a BERT model pre-trained on financial communication text. The purpose is to enhance finaincal NLP research and practice. It is trained on the following three finanical communication corpus. The total corpora size is 4.9B tokens.
-
-* Corporate Reports 10-K & 10-Q: 2.5B tokens 
-* Earnings Call Transcripts: 1.3B tokens
-* Analyst Reports: 1.1B tokens
-
-`FinBERT` results in state-of-the-art performance on various financial NLP task, including sentiment analysis, ESG classification, forward-looking statement (FLS) classification. With the release of `FinBERT`, we hope practitioners and researchers can utilize `FinBERT` for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
-
-
-
-# 1. Pre-trained model
 **You can obtain pretrained FinBERT in two ways:**
-**Option 1:**
-The FinBERT-FinVocab-Uncased model is available at Huggingface 🤗. https://huggingface.co/yiyanghkust/finbert-pretrain
+
+**Option 1:** The FinBERT-FinVocab-Uncased model is available at Huggingface 🤗. https://huggingface.co/yiyanghkust/finbert-pretrain
 
 
 **Option 2:**
@@ -76,10 +73,7 @@ We provide four versions of pre-trained weights.
 - [FinVocab-Uncased](https://gohkust-my.sharepoint.com/:t:/g/personal/imyiyang_ust_hk/EX3C-KM9bTxOjdttsPslLZUBw_mh9Jdh8PB0WTv6b2tEIA?e=DYBVJY)
 - [FinVocab-Cased](https://gohkust-my.sharepoint.com/:t:/g/personal/imyiyang_ust_hk/EchaAUzzYKhAidVhkqGp790BuA8UC5E9rTRhTmAnlGzZug?e=eniqml)
 
-
-# 2. Fine-tuned model
-### Using FinBERT for financial sentiment classification
-The FinBERT pretrained model can be fine-tuned on downstream financial NLP tasks. This notebook illustrates the process of fine-tuning FinBERT using Huggingface 🤗's tranformers library. You can modify this notebook accordingly to meet you needs.
+ 
 
 ## Citation
     @misc{yang2020finbert,
