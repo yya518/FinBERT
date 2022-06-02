@@ -1,6 +1,20 @@
 # FinBERT
 
 **UPDATE:**
+[June 2, 2022] We have fine-tuned FinBERT pretrained model on several financial NLP tasks, all outperforming traditional machine learning models, deep learning models, and fine-tuned BERT models.
+
+All the fine-tuned FinBERT models are publicly hosted at Huggingface 🤗. Specifically, we have the following:
+
+**FinBERT-Pretrained**: The pretrained FinBERT model on large-scale financial text. https://huggingface.co/yiyanghkust/finbert-pretrain
+**FinBERT-Sentiment**: for sentiment classification task. https://huggingface.co/yiyanghkust/finbert-tone
+**FinBERT-ESG**: for ESG classification task. https://huggingface.co/yiyanghkust/finbert-esg
+**FinBERT-FLS**: for forward-looking statement (FLS) classification task. https://huggingface.co/yiyanghkust/finbert-fls
+
+We have also re-organized this Github repo. 
+
+Visit [FinBERT.AI](https://finbert.ai/) for more details on the recent development of FinBERT 
+
+**UPDATE:**
 
 [July 30, 2021] The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with Huggingface's [`transformers`](https://huggingface.co/transformers/) library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analyst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
 
@@ -41,16 +55,17 @@ profits are flat ---- neutral
 * Earnings Call Transcripts: 1.3B tokens
 * Analyst Reports: 1.1B tokens
 
-`FinBERT` results in state-of-the-art performance on financial sentiment classification task, which is a core financial NLP task. 
-With the release of `FinBERT`, we hope practitioners and researchers can utilize `FinBERT` for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
+`FinBERT` results in state-of-the-art performance on various financial NLP task, including sentiment analysis, ESG classification, forward-looking statement (FLS) classification. With the release of `FinBERT`, we hope practitioners and researchers can utilize `FinBERT` for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
 
-**You can use FinBERT in two ways:**
-1. Pre-trained model. You can fine-tuned FinBERT with your own dataset. FinBERT is most suitable for financial NLP tasks. We have the provided several FinBERT models in below, as well as the fine-tune scripts.
-2. Fine-tuned model. If you are interested in simply using FinBERT for financial sentiment classification prediction, we provide a fine-tuned FinBERT model that is fine tuned on 10,000 manually annotated analyst statements. This dataset has been used in Accounting literature for analyst tone analysis (Huang et al., The Accounting Review, 2014).
+
 
 # 1. Pre-trained model
-### Download FinBERT
+**You can obtain pretrained FinBERT in two ways:**
+**Option 1:**
+The FinBERT-FinVocab-Uncased model is available at Huggingface 🤗. https://huggingface.co/yiyanghkust/finbert-pretrain
 
+
+**Option 2:**
 We provide four versions of pre-trained weights. 
 - [FinBERT-FinVocab-Uncased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EksJcamJpclJlbMweFfB5DQB1XrsxURYN5GSqZw3jmSeSw?e=KAyhsX) (**Recommended**)
 - [FinBERT-FinVocab-Cased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EgJZkmPlrdBLj6Kb4RXxwGwBymku6G-47QQrPYYDPJfr1Q?e=xA978z)
@@ -61,26 +76,10 @@ We provide four versions of pre-trained weights.
 - [FinVocab-Uncased](https://gohkust-my.sharepoint.com/:t:/g/personal/imyiyang_ust_hk/EX3C-KM9bTxOjdttsPslLZUBw_mh9Jdh8PB0WTv6b2tEIA?e=DYBVJY)
 - [FinVocab-Cased](https://gohkust-my.sharepoint.com/:t:/g/personal/imyiyang_ust_hk/EchaAUzzYKhAidVhkqGp790BuA8UC5E9rTRhTmAnlGzZug?e=eniqml)
 
-#### Downloading Financial Phrase Bank Dataset
-The datase is collected by [Malo et al. 2014](https://arxiv.org/abs/1307.5336), and can be downloaded from [this link](https://www.researchgate.net/profile/Pekka_Malo/publication/251231364_FinancialPhraseBank-v10/data/0c96051eee4fb1d56e000000/FinancialPhraseBank-v10.zip?origin=publication_list). The zip file for the Financial Phrase Bank Dataset has been provided for ease of download and use. 
-
-#### Environment:
-To set up the evironment used to train and test the model, run `pip install -r requirements.txt`\
-We would like to give special thanks to the creators of pytorch-pretrained-bert (i.e. pytorch-transformers)
-
-In order to fine-tune `FinBERT` on the Financial Phrase Bank dataset, please run the script as follows:
-
-`python train_bert.py --cuda_device (cuda:device_id) --output_path (output directory) --vocab (vocab chosen)`\
- `--vocab_path (path to new vocab txt file) --data_dir (path to downloaded dataset) --weight_path (path to downloaded weights)`
- 
-There are 4 kinds of vocab to choose from: `FinVocab-Uncased`, `FinVocab-Cased`, and Google's BERT Base-Uncased and Base-Cased. 
-
-*Note to run the script, one should first download the model weights, and the Financial Phrase Bank Dataset.*
 
 # 2. Fine-tuned model
 ### Using FinBERT for financial sentiment classification
-If you are simply interested in using FinBERT for downstream sentiment classification task, we have a fine-tuned FinBERT for your use. This fine-tuned FinBERT model is fine-tuned on 10,000 analyst statements for tone prediction task (positive, negative, neutral). We provide a [Jupyter notebook](https://github.com/yya518/FinBERT/blob/master/FinBert%20Model%20Example.ipynb) to show how you can use it with your own data. For comparison purpose, we also provided a pre-trained Naive Bayes Model.  The fine-tuned FinBERT has significantly better performance than the Naive Bayes model, and it can gauge finanical text tone with high accuracy.
-
+The FinBERT pretrained model can be fine-tuned on downstream financial NLP tasks. This notebook illustrates the process of fine-tuning FinBERT using Huggingface 🤗's tranformers library. You can modify this notebook accordingly to meet you needs.
 
 ## Citation
     @misc{yang2020finbert,
