@@ -29,7 +29,7 @@ In this Github repo,
 ---
 **\*\*\*\*\* July 30, 2021: migrated to Huggingface 🤗\*\*\*\*\***
 
-[July 30, 2021] The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with Huggingface's [`transformers`](https://huggingface.co/transformers/) library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analyst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
+The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with Huggingface's [`transformers`](https://huggingface.co/transformers/) library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analyst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
 
 ```javascript
 from transformers import BertTokenizer, BertForSequenceClassification
@@ -61,14 +61,9 @@ profits are flat ---- neutral
 
 ***
 
+**\*\*\*\*\* Jun 16, 2020: Pretrained FinBERT Model Released\*\*\*\*\***
 
-**You can obtain pretrained FinBERT in two ways:**
-
-**Option 1:** The FinBERT-FinVocab-Uncased model is available at Huggingface 🤗. https://huggingface.co/yiyanghkust/finbert-pretrain
-
-
-**Option 2:**
-We provide four versions of pre-trained weights. 
+We provide four versions of pre-trained FinBERT weights. 
 - [FinBERT-FinVocab-Uncased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EksJcamJpclJlbMweFfB5DQB1XrsxURYN5GSqZw3jmSeSw?e=KAyhsX) (**Recommended**)
 - [FinBERT-FinVocab-Cased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EgJZkmPlrdBLj6Kb4RXxwGwBymku6G-47QQrPYYDPJfr1Q?e=xA978z)
 - [FinBERT-BaseVocab-Uncased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/ErcYR77ZaxBAnQsmjIJF5joBapAf0HDaH0vWr_WXnoF1sA?e=oBTsSk)
