@@ -1,5 +1,9 @@
 # FinBERT
 
+<p>
+<a href="https://console.tiyaro.ai/explore/yiyanghkust-finbert-tone"> <img src="https://tiyaro-public-docs.s3.us-west-2.amazonaws.com/assets/try_on_tiyaro_badge.svg"></a>
+</p>
+
 **\*\*\*\*\* June 2, 2022: More fine-tuned FinBERT models available\*\*\*\*\***
 
 Visit [FinBERT.AI](https://finbert.ai/) for more details on the recent development of FinBERT.
